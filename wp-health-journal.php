@@ -15,4 +15,7 @@ Auther URI: https://adamchampagne.com/
  // Load Scripts
  require_once(plugin_dir_path(__FILE__) . '/includes/wp-health-journal-scripts.php');
 
+ // Load Custom Post Types
+ require_once(plugin_dir_path(__FILE__) . '/includes/wp-health-journal-cpt.php');
+
 
