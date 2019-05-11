@@ -1,10 +1,10 @@
 <?php
 // Create custom post type
 
-function wphj_register_measurment(){
+function wphj_register_measurement(){
     // Setup Labels
-    $singular_name = apply_filters('wphj_label_single', 'Measurment');
-    $plural_name = apply_filters('wphj_label_plural', 'Measurments');
+    $singular_name = apply_filters('wphj_label_single', 'Measurement');
+    $plural_name = apply_filters('wphj_label_plural', 'Measurements');
 
     $labels = array(
         'name'              => $plural_name,
@@ -22,9 +22,9 @@ function wphj_register_measurment(){
         'menu_name'         => $plural_name,
     );
 
-    $args = apply_filters('wphj_measurment_args', array(
+    $args = apply_filters('wphj_measurement_args', array(
         'labels'            => $labels,
-        'description'       => 'Measurment by category',
+        'description'       => 'Measurement by category',
         'taxonomies'        => array('category'),
         'public'            => true,
         'show_in_muen'      => true,
@@ -33,7 +33,7 @@ function wphj_register_measurment(){
         'show_in_nav_menus' => true,
         'query_var'         => true,
         'can_export'        => true,
-        'rewrite'           => array('slug' => 'measurment'),
+        'rewrite'           => array('slug' => 'measurement'),
         'capability_type'   => 'post',
         'supports'          => array(
             'title'
@@ -41,7 +41,7 @@ function wphj_register_measurment(){
     ));
 
     // Register Post Type
-    register_post_type('measurment', $args);
+    register_post_type('measurement', $args);
 }
 
-add_action('init', 'wphj_register_measurment');
+add_action('init', 'wphj_register_measurement');
