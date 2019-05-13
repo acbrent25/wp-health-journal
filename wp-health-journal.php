@@ -39,15 +39,7 @@ if ( !class_exists('acf') ) { // if ACF Pro plugin does not currently exist
 
    /** Start: Include ACF */
    include_once( plugin_dir_path( __FILE__ ) . 'acf/acf.php' );
-   /** End: Include ACF */
-  
-   /** Start: Stop ACF upgrade notifications */
-   add_filter( 'site_transient_update_plugins', 'wphj_stop_acf_update_notifications', 11 );
-   function wphj_stop_acf_update_notifications( $value ) {
-     unset( $value->response[ plugin_dir_path( __FILE__ ) . 'acf/acf.php' ] );
-     return $value;
-   }
-   /** End: Stop ACF upgrade notifications */
+   
  } 
 
 // (Optional) Hide the ACF admin menu item.
@@ -58,6 +50,10 @@ function my_acf_settings_show_admin( $show_admin ) {
 
 // Load Custom Fields
 require_once(plugin_dir_path(__FILE__) . '/includes/wp-health-journal-fields.php');
+
+// Load Custom Functions
+require_once(plugin_dir_path(__FILE__) . '/includes/wp-health-journal-custom-functions.php');
+
 
 
 
