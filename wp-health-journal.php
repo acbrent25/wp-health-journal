@@ -18,6 +18,9 @@ Auther URI: https://adamchampagne.com/
  // Load Custom Post Types
  require_once(plugin_dir_path(__FILE__) . '/includes/wp-health-journal-cpt.php');
 
+  // Load Shortcode
+  require_once(plugin_dir_path(__FILE__) . '/includes/wp-health-journal-shortcode.php');
+
 
 
 /** Start: Detect ACF Pro plugin. Include if not present. */
@@ -43,7 +46,7 @@ if ( !class_exists('acf') ) { // if ACF Pro plugin does not currently exist
  } 
 
 // (Optional) Hide the ACF admin menu item.
-add_filter('acf/settings/show_admin', 'my_acf_settings_show_admin');
+//add_filter('acf/settings/show_admin', 'my_acf_settings_show_admin');
 function my_acf_settings_show_admin( $show_admin ) {
     return false;
 }
